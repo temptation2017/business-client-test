@@ -1,7 +1,10 @@
-neo.hello=hello im dev update china2019-55555555
+neo:
+  Hello: hello im dev update china2019-55555555
 server:
   port: 8891
 spring:
+  application:
+    name: business-client-test
   #rabbitmq:   # 本地无需配置
   #  host: localhost
   #  port: 5672
