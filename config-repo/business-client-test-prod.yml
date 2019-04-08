@@ -1,1 +1,21 @@
-neo.hello=hello im prod
+neo:
+    hello: hello im prod
+server:
+  port: 8891
+spring:
+  application:
+    name: business-client-test
+  #rabbitmq:   # 本地无需配置
+  #  host: localhost
+  #  port: 5672
+  #  username: guest
+  #  password: guest
+  bus:
+    trace:
+      enabled: true
+    enabled: true
+management:                    #SpringCloud 1.5版本暴露接口，暴露/bus-refresh接口
+  endpoints:                  #SpringCloud 2.0.0版本以后暴露接口方式
+    web:
+      exposure:
+        include: bus-refresh
