@@ -1,15 +1,6 @@
 neo:
     hello: hello im dev 
-server:
-  port: 8891
 spring:
-  application:
-    name: business-client-test
-  #rabbitmq:   # 本地无需配置
-  #  host: localhost
-  #  port: 5672
-  #  username: guest
-  #  password: guest
   bus:
     trace:
       enabled: true
