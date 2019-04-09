@@ -14,3 +14,8 @@ management:                    #SpringCloud 1.5版本暴露接口，暴露/bus-r
 #BUSINESS-CLIENT-FEIGN:
 #  ribbon:
 #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
