@@ -1,5 +1,5 @@
 neo:
-    hello: hello im dev 40
+    hello: hello im dev 45
 spring:
   bus:
     trace:
