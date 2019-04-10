@@ -4,16 +4,32 @@ spring:
       discovery:
         locator:
           enabled: true #是否与服务注册于发现组件进行结合，通过 serviceId 转发到具体的服务实例。
-                        #默认为 false，设为 true 便开启通过服务中心的自动根据 serviceId 创建路由的功能。
+          #默认为 false，设为 true 便开启通过服务中心的自动根据 serviceId 创建路由的功能。
       routes:
         - id: add_request_parameter_route
           uri: http://example.org
           filters:
-          - AddRequestParameter=foo, bar
+            - AddRequestParameter=foo, bar
+  zipkin:
+    base-url: http://localhost:9500
+    sender:
+      type: web
+    sleuth:
+      sampler:
+        probability: 1
 logging:
   level:
     org.springframework.cloud.gateway: debug
-#spring:
+# 最后暴露自己的actuator的所有端口信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+  #spring:
   #          cloud:
   #            gateway:
   #              routes:

@@ -1,3 +1,11 @@
+spring:
+  zipkin:
+    base-url: http://localhost:9500
+    sender:
+      type: web
+    sleuth:
+      sampler:
+        probability: 1
 datasourceflag: local
 mybatis:
   type-aliases-package: com.lzq.switchdatasources.dto
@@ -6,3 +14,12 @@ mybatis:
     cache-enabled: false #关闭缓存
     local-cache-scope: statement
     jdbc-type-for-null: null
+# 最后暴露自己的actuator的所有端口信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

@@ -1,11 +1,13 @@
 spring:
   application:
     name: cloud-zuul-server
-  zipkin: # 对sleuth支持进行配置
-    base-url: http://localhost:9500  # zipkin服务器地址
+  zipkin:
+    base-url: http://localhost:9500
+    sender:
+      type: web
     sleuth:
       sampler:
-        percentage: 1.0
+        probability: 1
 # 添加断路器支持
 management:
   endpoints:

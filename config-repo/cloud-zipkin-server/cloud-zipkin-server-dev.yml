@@ -3,6 +3,13 @@ management:
     web:
       server:
         auto-time-requests: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
 #datasource:
 #  name: zipkin
 #    type: com.alibaba.druid.pool.DruidDataSource

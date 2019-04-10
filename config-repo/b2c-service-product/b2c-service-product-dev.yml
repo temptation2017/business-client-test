@@ -14,7 +14,23 @@ spring:
     port: 6379
   jpa:
     show-sql: true
+  zipkin:
+    base-url: http://localhost:9500
+    sender:
+      type: web
+    sleuth:
+      sampler:
+        probability: 1
 girl: 18
 logging:
   level:
     org.springframework.cloud.netflix.feign: debug
+# 最后暴露自己的actuator的所有端口信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

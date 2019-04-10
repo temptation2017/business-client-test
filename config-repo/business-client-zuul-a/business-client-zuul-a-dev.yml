@@ -1,6 +1,17 @@
 spring:
-  zipkin: # 对sleuth支持进行配置
-    base-url: http://localhost:9500  # zipkin服务器地址
+  zipkin:
+    base-url: http://localhost:9500
+    sender:
+      type: web
     sleuth:
       sampler:
-        percentage: 1.0
+        probability: 1
+# 最后暴露自己的actuator的所有端口信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

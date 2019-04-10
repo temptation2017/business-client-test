@@ -1,7 +1,14 @@
 spring:
-    profiles:
-        active:
-            - secure
+  profiles:
+    active:
+      - secure
+  zipkin:
+    base-url: http://localhost:9500
+    sender:
+      type: web
+    sleuth:
+      sampler:
+        probability: 1
 # tag::configuration-eureka[]
 ---
 #spring:
@@ -23,21 +30,21 @@ spring:
 #          to: 454205797@qq.com
 ---
 spring:
-    profiles: insecure
+  profiles: insecure
 ---
 # admin登录的用户名和密码
 spring:
-    profiles: secure
-    security:
-        user:
-            name: "admin"
-            password: "admin"
+  profiles: secure
+  security:
+    user:
+      name: "admin"
+      password: "admin"
 # 2.0开始，actuator默认不开放，所以要设置为开放
 management:
-    endpoints:
-        web:
-            exposure:
-                include: "*"  #暴露所有的端点我们可以看到更多应用相关信息
-    endpoint:
-        health:
-            show-details: ALWAYS  #health endpoint是否必须显示全部细节
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #暴露所有的端点我们可以看到更多应用相关信息
+  endpoint:
+    health:
+      show-details: ALWAYS  #health endpoint是否必须显示全部细节

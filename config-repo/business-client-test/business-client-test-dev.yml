@@ -1,15 +1,26 @@
 neo:
-    hello: hello im dev 50
+  hello: hello im dev 50
 spring:
   bus:
     trace:
       enabled: true
     enabled: true
-management:                    #SpringCloud 1.5版本暴露接口，暴露/bus-refresh接口
-  endpoints:                  #SpringCloud 2.0.0版本以后暴露接口方式
+  zipkin:
+    base-url: http://localhost:9500
+    sender:
+      type: web
+    sleuth:
+      sampler:
+        probability: 1
+# 最后暴露自己的actuator的所有端口信息
+management:
+  endpoints:
     web:
       exposure:
-        include: "*"
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
 # 负载均衡策略修改
 #BUSINESS-CLIENT-FEIGN:
 #  ribbon:

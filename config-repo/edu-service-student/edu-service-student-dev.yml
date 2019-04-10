@@ -70,6 +70,13 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/test  # mongodb://name:pass@localhost:27017/test
+  zipkin:
+    base-url: http://localhost:9500
+    sender:
+      type: web
+    sleuth:
+      sampler:
+        probability: 1
 # 自定义配置MongoDB多数据源
 mongodb:
   primary:
