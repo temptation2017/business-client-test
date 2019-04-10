@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: business-client-consul-producer
   cloud:
     consul: #consul服务器的相关配置，本地采用Mac下安装的localhost服务器
       host: localhost

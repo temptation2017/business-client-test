@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: business-client-jpa-thymeleaf
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: 111111

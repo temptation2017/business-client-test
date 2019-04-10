@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: business-client-feign
   jackson: # jacson时间格式配置
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
