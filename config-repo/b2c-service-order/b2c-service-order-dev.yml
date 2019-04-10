@@ -6,9 +6,23 @@ spring:
     username: root
     password: 111111
     url: jdbc:mysql://127.0.0.1:3306/SpringCloud_Sell?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:9000/eureka/
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  redis:
+    host: 127.0.0.1
+    port: 6379
 env:
   dev
+girl:
+  name: mo
+  age: 17
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
