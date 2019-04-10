@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: business-client-admin
+  boot:
+    admin:
+      client:
+        url: http://localhost:15601  # admin服务器地址
+# 最后暴露自己的actuator的所有端口信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

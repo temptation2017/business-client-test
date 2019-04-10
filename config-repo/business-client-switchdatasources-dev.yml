@@ -1,0 +1,8 @@
+datasourceflag: local
+mybatis:
+  type-aliases-package: com.lzq.switchdatasources.dto
+  mapper-locations: classpath*:com/lzq/switchdatasources/dao/*.xml
+  configuration:
+    cache-enabled: false #关闭缓存
+    local-cache-scope: statement
+    jdbc-type-for-null: null
