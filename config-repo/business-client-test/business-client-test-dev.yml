@@ -6,7 +6,7 @@ spring:
       enabled: true
     enabled: true
   zipkin:
-    base-url: http://localhost:9500
+    base-url: http://localhost:9500,http://localhost:9501,http://localhost:9502
     sender:
       type: web
     sleuth:
