@@ -1,0 +1,37 @@
+spring:
+  zipkin:
+    base-url: http://localhost:9500,http://localhost:9501,http://localhost:9502
+    sender:
+      type: web
+    sleuth:
+      sampler:
+        probability: 1
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: '*'
+    endpoint:
+      health:
+        show-details: ALWAYS
+  rabbitmq:
+    addresses: localhost:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 15000
+    listener:
+      order:
+        exchange:
+          durable: true
+          ignoreDeclarationExceptions: true
+          name: exchange-2
+          type: topic
+        key: springboot.*
+        queue:
+          durable: true
+          name: queue-2
+      simple:
+        acknowledge-mode: manual
+        concurrency: 5
+        max-concurrency: 10
