@@ -37,8 +37,8 @@ spring:
   profiles: secure
   security:
     user:
-      name: admin
-      password: 111111
+      name:  # admin
+      password:  # 111111
 # 2.0开始，actuator默认不开放，所以要设置为开放
 management:
   endpoints:
